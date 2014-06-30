@@ -40,13 +40,12 @@ class Projector:
         self.write_commands_suffix = model.write_suffix
 
         _logger.debug('Using the following configuration for pySerial:\n{}'.format(pprint.pformat(model.config)))
-        # FIXME: renable
-        #self.srl = serial.Serial(port=serialDevice, **(model.config))
-        #self.srl.timeout = 0.5
-        #self.srl.writeTimeout = 0.5
-        #self.sio = io.TextIOWrapper(self.srl)
+        self.srl = serial.Serial(port=serialDevice, **(model.config))
+        self.srl.timeout = 0.5
+        self.srl.writeTimeout = 0.5
+        self.sio = io.TextIOWrapper(self.srl)
 
-        #_logger.info('Created {}'.format(self.srl))
+        _logger.info('Created {}'.format(self.srl))
 
     def sendCmd(self, cmd, value):
         _logger.info('Sending command {cmd} {value}'.format(cmd=cmd, value=value))
@@ -60,9 +59,7 @@ class Projector:
         cmdString += self.write_commands[cmd][value]
         cmdString += self.write_commands_suffix
 
-        # FIXME: remove
         _logger.debug('Sending command {}'.format(repr(cmdString)))
-        return
 
         # Drop any output from projector yet to be read
         self.srl.flushOutput()
