@@ -5,4 +5,4 @@
 *.swp
 
 # Ignore user's configuration file
-optomactl.cfg
+srldevctl.cfg
