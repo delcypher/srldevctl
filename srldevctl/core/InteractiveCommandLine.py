@@ -21,7 +21,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class InteractiveCommandLine(cmd.Cmd):
-    prompt = '(optoma-ctl) '
+    prompt = '(srldev-ctl) '
 
     def __init__(self, projector):
         self.projector = projector
@@ -36,7 +36,7 @@ class InteractiveCommandLine(cmd.Cmd):
 
         super().__init__()
 
-        self.intro = """Welcome to the optoma-ctl interactive shell. Type help for more information"""
+        self.intro = """Welcome to the srldev-ctl interactive shell. Type help for more information"""
         self.intro = len(self.intro)*'#' + '\n' + self.intro + '\n' + len(self.intro)*'#' + '\n'
         self.intro += __doc__
 
