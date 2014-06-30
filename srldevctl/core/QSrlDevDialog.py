@@ -19,6 +19,7 @@ from .ConfigLoader import ConfigLoader, ConfigurationError
 from .Projector import Projector
 import logging
 import types
+import sys
 from PyQt4 import QtGui, uic
 
 _logger = logging.getLogger(__name__)
