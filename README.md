@@ -28,9 +28,10 @@ Run
 
 ```
 $ srldev-ctl.py
+```
 
-Running the qt-srldev-ctl interactive command line
-===============================================
+Running the qt-srldev-ctl graphical tool
+==================================================
 
 Run
 
